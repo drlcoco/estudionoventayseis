@@ -13,8 +13,6 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-
-
     - name: Set up Node.js
       uses: actions/setup-node@v4
       with:
@@ -22,18 +20,23 @@ jobs:
 
     - name: Configurar identidad de Git
       run: |
-        git config user.name "github-actions[bot]"
-        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git config user.name "drlcoco"
+        git config user.email "drlcoco@hotmail.com"
 
     - name: Install dependencies
       run: npm install
 
     - name: Build project
-      run: npm run build --no-silent
+      run: npm run build
+
+    - name: Move files to /dist and remove /dist/angular-estudionoventayseis
+      run: |
+        mv /dist/angular-estudionoventayseis/browser/* /dist/
+        rm -rf /dist/angular-estudionoventayseis
 
     - name: Deploy to gh pages
       run: |
-        npx angular-cli-ghpages --dir=dist/angular-estudionoventayseis/browser/ --no-silent
+        npx angular-cli-ghpages --dir=dist/
       env:
         CI: true
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
