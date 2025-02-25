@@ -24,19 +24,20 @@ jobs:
         git config user.email "drlcoco@hotmail.com"
 
     - name: Install dependencies
-      run: npm install
+      run: npm install --no-silent
 
     - name: Build project
-      run: npm run build
+      run: npm run build --no-silent
 
     - name: Move files to /dist and remove /dist/angular-estudionoventayseis
       run: |
-        mv dist/angular-estudionoventayseis/browser/* dist/
-        rm -rf /dist/angular-estudionoventayseis
+        mv dist/angular-estudionoventayseis/browser/* dist/ --no-silent
+        rm -rf /dist/angular-estudionoventayseis --no-silent
 
     - name: Deploy to gh pages
       run: |
-        npx angular-cli-ghpages --dir=dist/
+        npx angular-cli-ghpages --dir=dist/ --no-silent
       env:
         CI: true
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
