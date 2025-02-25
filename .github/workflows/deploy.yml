@@ -1,0 +1,43 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.10.0'
+
+    - name: Configurar identidad de Git
+      run: |
+        git config user.name "drlcoco"
+        git config user.email "drlcoco@hotmail.com"
+
+    - name: Install dependencies
+      run: npm install --no-silent
+
+    - name: Build project
+      run: npm run build --no-silent
+
+    - name: Move files to /dist and remove /dist/angular-estudionoventayseis
+      run: |
+        mv dist/angular-estudionoventayseis/browser/* dist/
+        rm -rf /dist/angular-estudionoventayseis/*
+
+    - name: Deploy to gh pages
+      run: |
+        npx angular-cli-ghpages --dir=dist/ --no-silent
+      env:
+        CI: true
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
