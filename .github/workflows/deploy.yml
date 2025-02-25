@@ -27,7 +27,7 @@ jobs:
       run: npm install --no-silent
 
     - name: Build project
-      run: npm run build --prod
+      run: npm run build -- --prod
 
     - name: Move files to /dist
       run: |
