@@ -13,10 +13,17 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
+
+
     - name: Set up Node.js
       uses: actions/setup-node@v4
       with:
         node-version: '20.10.0'
+
+    - name: Configurar identidad de Git
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
     - name: Install dependencies
       run: npm install
