@@ -39,11 +39,11 @@ export class CardComponent implements OnInit, AfterViewInit {
         this.currentId = this.project6;
         break;
     }
-    this.cdr.detectChanges(); // Forzar detección de cambios
+    this.cdr.detectChanges();
   }
 
   ngAfterViewInit() {
-    this.cdr.detectChanges(); // Fuerza a Angular a ejecutar la detección de cambios nuevamente
+    this.cdr.detectChanges();
   }
 
   setImage(src: string): void {
