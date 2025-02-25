@@ -31,8 +31,8 @@ jobs:
 
     - name: Move files to /dist and remove /dist/angular-estudionoventayseis
       run: |
-        mv dist/angular-estudionoventayseis/browser/* dist/ --no-silent
-        rm -rf /dist/angular-estudionoventayseis --no-silent
+        mv dist/angular-estudionoventayseis/browser/* dist/
+        rm -rf /dist/angular-estudionoventayseis
 
     - name: Deploy to gh pages
       run: |
