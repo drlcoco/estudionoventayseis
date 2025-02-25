@@ -22,6 +22,7 @@ jobs:
       run: |
         git config user.name "drlcoco"
         git config user.email "drlcoco@hotmail.com"
+        git remote set-url origin https://drlcoco:${{ secrets.GH_TOKEN }}@github.com/drlcoco/estudionoventayseis.git
 
     - name: Install dependencies
       run: npm install --no-silent
