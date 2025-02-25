@@ -27,7 +27,7 @@ jobs:
       run: npm install --no-silent
 
     - name: Build project
-      run: npm run build --no-silent
+      run: ng build --no-silent
 
     - name: Move files to /dist and remove /dist/angular-estudionoventayseis
       run: |
