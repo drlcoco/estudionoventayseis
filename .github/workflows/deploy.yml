@@ -27,11 +27,14 @@ jobs:
       run: npm install --no-silent
 
     - name: Build project
-      run: npm run build --output-path=dist/
+      run: ng build --prod
 
-    - name: Move files to /dist and remove /dist/angular-estudionoventayseis
+    - name: Move files to /dist
       run: |
         mv dist/angular-estudionoventayseis/browser/* dist/
+
+    - name: Remove /dist/angular-estudionoventayseis
+      run: |
         rm -rf dist/angular-estudionoventayseis
 
     - name: Deploy to gh pages
