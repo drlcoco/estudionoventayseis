@@ -1,5 +1,4 @@
 import { AfterViewInit, ChangeDetectorRef, Component, CUSTOM_ELEMENTS_SCHEMA, Input, OnInit } from '@angular/core';
-// Importa estilos de Swiper
 import 'swiper/css';
 import 'swiper/css/bundle';
 import 'swiper/css/effect-coverflow';
