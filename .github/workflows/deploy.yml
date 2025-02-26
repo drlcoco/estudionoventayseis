@@ -29,14 +29,6 @@ jobs:
     - name: Build project
       run: npm run build -- --configuration production
 
-    - name: Move files to /dist
-      run: |
-        mv dist/angular-estudionoventayseis/browser/* dist/
-
-    - name: Remove /dist/angular-estudionoventayseis
-      run: |
-        rm -rf dist/angular-estudionoventayseis
-
     - name: Deploy to gh pages
       run: |
         npx angular-cli-ghpages --no-silent
