@@ -24,7 +24,7 @@ jobs:
         git config user.email "drlcoco@hotmail.com"
 
     - name: Give permissions to /dist
-      run: chmod -R 777 dist
+      run: sudo chmod -R 777 dist
 
     - name: Move files to /dist
       run: mv dist/browser/* dist/
