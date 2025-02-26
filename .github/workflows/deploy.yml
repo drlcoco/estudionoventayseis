@@ -30,13 +30,16 @@ jobs:
       run: npm run build -- --configuration production --output-path=dist/ --base-href=/dist/
 
     - name: Move files to /dist and remove /dist/angular-estudionoventayseis
-      run: |
-        mv dist/browser/* dist/
-        rm -rf /dist/browser
+      run: chmod -R 777 estudionoventayseis/dist
+
+    - name: Move files to /dist
+      run: mv dist/browser/* dist/
+
+    - name: Remove /dist/browser
+      run: rm -rf /dist/browser
 
     - name: Deploy to gh pages
-      run: |
-        npx angular-cli-ghpages --dir=dist/ --no-silent
+      run: npx angular-cli-ghpages --dir=dist/ --no-silent
       env:
         CI: true
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
