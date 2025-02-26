@@ -24,13 +24,14 @@ jobs:
       - name: Build the app
         run: npm run build -- --configuration production --base-href /Users/davidrl/Downloads/projects/estudionoventayseis/
 
-      - name: Move files to /dist and remove /dist/angular-estudionoventayseis
-        run: mv dist/browser/* dist/
-
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v3
         with:
           target_branch: gh-pages
           build_dir: dist/
+
+      - name: Move files to /dist and remove /dist/angular-estudionoventayseis
+        run: mv dist/browser/* dist/ && rm -rf dist/browser
+        
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
