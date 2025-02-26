@@ -27,7 +27,7 @@ jobs:
       run: npm install --no-silent
 
     - name: Build project
-      run: npm run build -- --configuration production --output-path=/dist/ --base-href=/dist/
+      run: npm run build -- --configuration production --output-path=dist/ --base-href=/dist/
 
     - name: Deploy to gh pages
       run: |
