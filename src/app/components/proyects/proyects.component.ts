@@ -72,7 +72,6 @@ export class ProyectsComponent implements OnInit, AfterViewInit{
   constructor(private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
-    // Cambiar alguna propiedad aquí
     this.updateImagePaths(); // Configura las imágenes según el tamaño inicial
     this.cdr.detectChanges(); // Forzar detección de cambios
   }
