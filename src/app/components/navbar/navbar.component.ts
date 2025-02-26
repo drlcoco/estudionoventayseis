@@ -16,7 +16,7 @@ export class NavbarComponent {
   protected readonly activeSection: Signal<Section>;
 
 
-  public isHeaderVisible: boolean = true; // Cambiar a isHeaderVisible
+  public isHeaderVisible: boolean = true;
   private lastScrollTop: number = 0;
   private scrollThreshold: number = 150;
   isToggle: boolean = false;
