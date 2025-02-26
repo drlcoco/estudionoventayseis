@@ -27,7 +27,7 @@ jobs:
       - name: Move files to /dist and remove /dist/angular-estudionoventayseis
         run:
           mv dist/browser/* dist/
-          rm /dist/browser
+          rm dist/browser
 
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v3
