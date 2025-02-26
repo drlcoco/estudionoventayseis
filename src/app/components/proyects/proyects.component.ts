@@ -76,7 +76,6 @@ export class ProyectsComponent implements OnInit, AfterViewInit{
     this.cdr.detectChanges(); // Forzar detección de cambios
   }
 
-  // Escucha cambios en el tamaño de la ventana
   @HostListener('window:resize', ['$event'])
   onResize(): void {
     this.updateImagePaths();
