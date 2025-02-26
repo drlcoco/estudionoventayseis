@@ -23,8 +23,8 @@ jobs:
         git config user.name "drlcoco"
         git config user.email "drlcoco@hotmail.com"
 
-    - name: Move files to /dist and remove /dist/angular-estudionoventayseis
-      run: chmod -R 777 estudionoventayseis/dist
+    - name: Give permissions to /dist
+      run: chmod -R 777 /dist
 
     - name: Move files to /dist
       run: mv dist/browser/* dist/
