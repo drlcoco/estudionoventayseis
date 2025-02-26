@@ -1,36 +1,33 @@
-name: Deploy to GitHub Pages
+name: Angular CI/CD
 
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '20.10.0'
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
 
-    - name: Configurar identidad de Git
-      run: |
-        git config user.name "drlcoco"
-        git config user.email "drlcoco@hotmail.com"
+      - name: Install dependencies
+        run: npm install
 
-    - name: Install dependencies
-      run: npm install
+      - name: Build the app
+        run: npm run build -- --configuration production --base-href /angular-poc/
 
-    - name: Build project
-      run: npm run build
-
-    - name: Deploy to gh pages
-      run: npx angular-cli-ghpages
-      env:
-        CI: true
-        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      - name: Deploy to GitHub Pages
+        uses: crazy-max/ghaction-github-pages@v3
+        with:
+          target_branch: gh-pages
+          build_dir: dist/angular-poc
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
