@@ -23,14 +23,8 @@ jobs:
         git config user.name "drlcoco"
         git config user.email "drlcoco@hotmail.com"
 
-    - name: Move files to /dist
-      run: mv dist/browser/* dist/
-
-    - name: Remove /dist/browser
-      run: rm -rf /dist/browser
-
     - name: Deploy to gh pages
-      run: npx angular-cli-ghpages --dir=dist/ --no-silent
+      run: npx angular-cli-ghpages --dir=dist/browser/ --no-silent
       env:
         CI: true
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
