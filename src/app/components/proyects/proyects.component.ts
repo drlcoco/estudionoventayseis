@@ -12,7 +12,7 @@ import { CardComponent } from "../card/card.component";
 })
 export class ProyectsComponent implements OnInit, AfterViewInit{
 
-  folder = ''; // Carpeta predeterminada
+  folder = '';
 
   images4: Image[] = [
     { src: '/assets/images/project4/image00001.webp', alt: '#image00001' },
