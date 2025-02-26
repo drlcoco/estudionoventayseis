@@ -73,7 +73,7 @@ export class ProyectsComponent implements OnInit, AfterViewInit{
 
   ngOnInit(): void {
     this.updateImagePaths(); // Configura las imágenes según el tamaño inicial
-    this.cdr.detectChanges(); // Forzar detección de cambios
+    this.cdr.detectChanges();
   }
 
   @HostListener('window:resize', ['$event'])
