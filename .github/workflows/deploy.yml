@@ -28,6 +28,6 @@ jobs:
         uses: crazy-max/ghaction-github-pages@v3
         with:
           target_branch: gh-pages
-          build_dir: /Users/davidrl/Downloads/projects/estudionoventayseis/dist/
+          build_dir: /dist/
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
