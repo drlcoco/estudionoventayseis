@@ -37,7 +37,6 @@ export class NavbarComponent {
       this.isHeaderVisible = true;
     }
 
-    // Actualizar la posición de scroll anterior
     this.lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
   }
 
