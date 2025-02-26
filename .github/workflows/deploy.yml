@@ -25,9 +25,7 @@ jobs:
         run: npm run build -- --configuration production --base-href /Users/davidrl/Downloads/projects/estudionoventayseis/
 
       - name: Move files to /dist and remove /dist/angular-estudionoventayseis
-        run:
-          mv dist/browser/* dist/
-          rm dist/browser
+        run: mv dist/browser/* dist/
 
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v3
