@@ -82,7 +82,6 @@ export class ProyectsComponent implements OnInit, AfterViewInit{
     this.updateImagePaths();
   }
 
-  // Actualiza las rutas de las imágenes según el ancho de la pantalla
   updateImagePaths(): void {
     const width = window.innerWidth;
 
