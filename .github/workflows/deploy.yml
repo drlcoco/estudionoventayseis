@@ -27,7 +27,13 @@ jobs:
       run: npm install --no-silent
 
     - name: Build project
-      run: npm run build --no-silent
+      run: npm run build -- --configuration production
+
+
+    - name: Move files to /dist
+      run: |
+        mv dist/browser/* dist/
+
 
     - name: Deploy to gh pages
       run: npx angular-cli-ghpages --dir=dist/browser/ --no-silent
