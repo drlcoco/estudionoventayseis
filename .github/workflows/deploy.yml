@@ -27,7 +27,7 @@ jobs:
       run: npm install --no-silent
 
     - name: Build project
-      run: npm run build -- --configuration production
+      run: npm run build -- --configuration production --base-href=/Users/davidrl/Downloads/projects/estudionoventayseis/
 
     - name: Deploy to gh pages
       run: npx angular-cli-ghpages
