@@ -23,6 +23,12 @@ jobs:
         git config user.name "drlcoco"
         git config user.email "drlcoco@hotmail.com"
 
+    - name: Install dependencies
+      run: npm install --no-silent
+
+    - name: Build project
+      run: npm run build --no-silent
+
     - name: Deploy to gh pages
       run: npx angular-cli-ghpages --dir=dist/browser/ --no-silent
       env:
