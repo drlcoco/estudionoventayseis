@@ -24,10 +24,10 @@ jobs:
         git config user.email "drlcoco@hotmail.com"
 
     - name: Install dependencies
-      run: npm install --no-silent
+      run: npm install
 
     - name: Build project
-      run: npm run build -- --configuration production --output-path=dist/ --base-href=/Users/davidrl/Downloads/projects/estudionoventayseis/
+      run: npm run build
 
     - name: Deploy to gh pages
       run: npx angular-cli-ghpages
